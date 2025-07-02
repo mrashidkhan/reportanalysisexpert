@@ -33,6 +33,10 @@ resources/views/medical-reports/upload.blade.php
             @csrf
 
             <!-- Patient Information -->
+            
+            <!-- Hidden field for authenticated user ID -->
+            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+
             <div class="form-row">
               <div class="col-lg-6">
                 <div>

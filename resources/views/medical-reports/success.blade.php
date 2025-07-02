@@ -57,7 +57,7 @@ resources/views/medical-reports/success.blade.php
 
           <div class="contact_info mt-4 p-3 bg-info text-white rounded">
             <h6>Need Help?</h6>
-            <p class="mb-0">Contact us at <strong>+92-XXX-XXXXXXX</strong> or <strong>info@medicalanalysis.com</strong></p>
+            <p class="mb-0">Contact us at <strong>+92-315-8274326</strong> or <strong>labreportanalyst@gmail.com</strong></p>
           </div>
         </div>
       </div>

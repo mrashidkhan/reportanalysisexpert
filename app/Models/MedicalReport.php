@@ -16,6 +16,7 @@ class MedicalReport extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',  
         'patient_name',
         'phone_number',
         'email',
@@ -156,4 +157,9 @@ class MedicalReport extends Model
 
         return round($bytes, $precision) . ' ' . $units[$i];
     }
+
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
 }

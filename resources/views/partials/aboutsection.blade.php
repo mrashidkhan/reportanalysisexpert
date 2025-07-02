@@ -20,8 +20,14 @@
               </h2>
             </div>
             <p>
-              We provide expert medical report analysis by qualified specialists, helping doctors interpret complex pathology, radiology, and diagnostic reports with precision. Simply upload your patient’s reports, and our team delivers clear, actionable insights—all at an affordable cost. No AI, no automated tools—just reliable, human expertise to support your clinical decisions.
-            </p>
+        Our service provides patients with simplified summaries and analyses of their medical lab reports.
+    </p>
+    <p>
+        This is because most patients find it difficult to understand the complex medical terms and technical language used in lab reports. By offering clear and easy-to-understand explanations, we enable patients to confidently discuss their condition with their doctors based on their reports.
+    </p>
+    <p>
+        This helps them better understand their illness and communicate effectively with their physician, leading to more informed decisions and improved treatment outcomes.
+    </p>
             <div class="btn-box">
          @if (isset($current_view_name) && $current_view_name === 'aboutus')
     <a href="{{ route('contactus') }}">
