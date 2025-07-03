@@ -22,8 +22,11 @@ Route::get('/contactus', [PageController::class, 'contactus'])->name('contactus'
 Route::get('/aboutus', [PageController::class, 'aboutus'])->name('aboutus');
 Route::get('/departments', [PageController::class, 'departments'])->name('departments');
 Route::get('/doctors', [PageController::class, 'doctors'])->name('doctors');
-Route::get('/reportsupload', [PageController::class, 'reportsupload'])->name('reports.upload');
-
+// Route::get('/reportsupload', [PageController::class, 'reportsupload'])->name('reports.upload');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/reportsupload', [PageController::class, 'reportsupload'])->name('reports.upload');
+    // Add other authenticated routes here
+});
 // ========================================
 // MEDICAL REPORTS ROUTES
 // ========================================

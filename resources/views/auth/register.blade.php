@@ -1,12 +1,12 @@
 @extends('layout.master')
 
 @section('content')
-<div class="container">
+<div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="mb-0">{{ __('Register') }}</h3>
+            <div class="card" >
+                <div class="card-header" style="background-color: #178066;">
+                    <h3 class="mb-0 text-white text-center"  >{{ __('Register') }}</h3>
                 </div>
 
                 <div class="card-body">
@@ -87,7 +87,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn text-white " style="background-color: #178066;">
                                     {{ __('Register') }}
                                 </button>
                             </div>
