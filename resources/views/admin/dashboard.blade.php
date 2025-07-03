@@ -25,7 +25,7 @@
                         <tr>
                             <th scope="col">Patient Name</th>
                             <th scope="col">Phone Number</th>
-                            <th scope="col">Age</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Report Date</th>
                             <th scope="col">Actions</th>
                         </tr>
@@ -35,7 +35,7 @@
                             <tr>
                                 <td>{{ $report->user->name }}</td>
                                 <td>{{ $report->phone_number }}</td>
-                                <td>{{ $report->age }}</td>
+                                <td>{{ $report->status }}</td>
                                 <td>{{ $report->created_at->format('M d, Y h:i A') }}</td>
                                 <td>
                                     <a href="{{ route('medical-reports.show', $report->id) }}" class="btn btn-info btn-sm">

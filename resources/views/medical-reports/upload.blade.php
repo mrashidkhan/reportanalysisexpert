@@ -33,7 +33,7 @@ resources/views/medical-reports/upload.blade.php
             @csrf
 
             <!-- Patient Information -->
-            
+
             <!-- Hidden field for authenticated user ID -->
             <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
@@ -205,10 +205,10 @@ resources/views/medical-reports/upload.blade.php
           <div class="pricing_info">
             <h5>Analysis Pricing</h5>
             <ul>
-              <li>Blood Reports: PKR 1,500</li>
-              <li>X-Ray Analysis: PKR 2,000</li>
-              <li>MRI/CT Scan: PKR 3,500</li>
-              <li>Ultrasound: PKR 2,500</li>
+              <li>Blood Reports: PKR 200/- per report</li>
+              <li>X-Ray Analysis: PKR 300/- per report</li>
+              <li>MRI/CT Scan: PKR 400 per report</li>
+              <li>Ultrasound: PKR 350/- per report</li>
             </ul>
             <small>*Urgent and Emergency priorities have additional charges</small>
           </div>

@@ -10,39 +10,6 @@ resources/views/medical-reports/show.blade.php
 @section('content')
     <section class="contact_section layout_padding">
         <div class="container">
-            @if(session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <i class="fa fa-check-circle"></i> {{ session('success') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-
-            @if(session('error'))
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="fa fa-exclamation-triangle"></i> {{ session('error') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-
-            @if($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <i class="fa fa-exclamation-triangle"></i>
-                    <strong>Please fix the following errors:</strong>
-                    <ul class="mb-0 mt-2">
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            @endif
-
             <div class="row">
                 <div class="col-md-8">
                     <div class="report_details_container">
@@ -124,103 +91,33 @@ resources/views/medical-reports/show.blade.php
                         </div>
 
                         @if ($report->analysis_result)
-    <div class="analysis_result bg-success text-white p-4 rounded mb-4">
-        <h4>Analysis Result</h4>
+                            <div class="analysis_result bg-success text-white p-4 rounded mb-4">
+                                <h4>Analysis Result</h4>
+                                <div class="result_content">
+                                    {!! nl2br(e($report->analysis_result)) !!}
+                                </div>
+                                @if ($report->analyzer)
+                                    <small class="d-block mt-3">
+                                        <strong>Analyzed by:</strong> {{ $report->analyzer }}
+                                    </small>
+                                @endif
+                            </div>
+                        @else
+                            <div class="analysis_pending bg-warning text-dark p-4 rounded mb-4">
+                                <h4><i class="fa fa-clock-o"></i> Analysis Pending</h4>
+                                <p class="mb-0">Your medical report is currently being analyzed by our medical experts.
+                                    You will receive the analysis results via email once completed.</p>
+                                @if ($report->status == 'analyzing')
+                                    <div class="progress mt-3">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                            role="progressbar" style="width: 60%">
+                                            Analysis in Progress
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        @endif
 
-        @if(auth()->check() && auth()->user()->isAdmin())
-            <!-- Admin Edit Form -->
-            <form id="analysisForm" action="{{ route('medical-reports.update-analysis', $report->id) }}" method="POST">
-                @csrf
-                @method('PUT')
-
-                <div class="form-group mb-3">
-                    <textarea
-                        name="analysis_result"
-                        id="analysis_result"
-                        class="form-control"
-                        rows="8"
-                        style="background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white;"
-                        placeholder="Enter analysis result..."
-                        required
-                    >{{ old('analysis_result', $report->analysis_result) }}</textarea>
-                    @error('analysis_result')
-                        <div class="text-warning mt-1">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center">
-                    <button type="submit" class="btn btn-light">
-                        <i class="fa fa-save"></i> Update Analysis
-                    </button>
-                    <button type="button" class="btn btn-outline-light" onclick="toggleEditMode()">
-                        <i class="fa fa-eye"></i> Preview
-                    </button>
-                </div>
-            </form>
-
-            <!-- Preview Mode (Hidden by default) -->
-            <div id="previewMode" style="display: none;">
-                <div class="result_content">
-                    {!! nl2br(e($report->analysis_result)) !!}
-                </div>
-                <button type="button" class="btn btn-outline-light mt-3" onclick="toggleEditMode()">
-                    <i class="fa fa-edit"></i> Edit Analysis
-                </button>
-            </div>
-        @else
-            <!-- Display Mode for Non-Admin Users -->
-            <div class="result_content">
-                {!! nl2br(e($report->analysis_result)) !!}
-            </div>
-        @endif
-
-        {{-- @if ($report->analyzer)
-            <small class="d-block mt-3">
-                <strong>Analyzed by:</strong> {{ $report->analyzer }}
-            </small>
-        @endif --}}
-    </div>
-
-    @if(auth()->check() && auth()->user()->isAdmin())
-        <script>
-            function toggleEditMode() {
-                const form = document.getElementById('analysisForm');
-                const preview = document.getElementById('previewMode');
-
-                if (form.style.display === 'none') {
-                    form.style.display = 'block';
-                    preview.style.display = 'none';
-                } else {
-                    form.style.display = 'none';
-                    preview.style.display = 'block';
-                }
-            }
-
-            document.getElementById('analysisForm').addEventListener('submit', function(e) {
-                const textarea = document.getElementById('analysis_result');
-                if (textarea.value.trim() === '') {
-                    e.preventDefault();
-                    alert('Please enter an analysis result before updating.');
-                    return false;
-                }
-            });
-        </script>
-    @endif
-@else
-    <div class="analysis_pending bg-warning text-dark p-4 rounded mb-4">
-        <h4><i class="fa fa-clock-o"></i> Analysis Pending</h4>
-        <p class="mb-0">Your medical report is currently being analyzed by our medical experts.
-            You will receive the analysis results via email once completed.</p>
-        @if ($report->status == 'analyzing')
-            <div class="progress mt-3">
-                <div class="progress-bar progress-bar-striped progress-bar-animated"
-                    role="progressbar" style="width: 60%">
-                    Analysis in Progress
-                </div>
-            </div>
-        @endif
-    </div>
-@endif
                         <!-- Action Buttons -->
                         <div class="action_buttons">
                             <a href="{{ route('medical-reports.upload') }}" class="btn btn-primary">

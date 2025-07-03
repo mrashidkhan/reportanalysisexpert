@@ -127,3 +127,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+Route::put('/medical-reports/{report}/update-analysis', [MedicalReportController::class, 'updateAnalysis'])
+        ->name('medical-reports.update-analysis')
+        ->middleware('auth');

@@ -270,7 +270,7 @@ public function updateAnalysis(Request $request, $id)
         // Update the analysis result and related fields
         $report->update([
             'analysis_result' => $request->analysis_result,
-            'analyzed_by' => auth()->user()->id, // or auth()->user()->full_name
+            'analyzed_by' => auth()->user()->name, // or auth()->user()->full_name
             'analyzed_at' => now(),
             'status' => 'completed', // Automatically set status to completed
         ]);
