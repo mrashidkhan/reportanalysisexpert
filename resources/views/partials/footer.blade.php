@@ -68,8 +68,8 @@
               <a class="" href="{{ route('departments') }}">
                 Departments
               </a>
-              <a class="" href="{{ route('doctors') }}">
-                Doctors
+              <a class="" href="{{ route('reports.upload') }}">
+                Upload Report
               </a>
               <a class="active" href="{{ route('contactus') }}">
                 Contact Us
@@ -98,9 +98,9 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates<br><br></a>
-            &copy; <span id="displayYear"></span> Distributed By
-            <a href="https://themewagon.com/">ThemeWagon</a>
+          <a href="https://html.design/">Lab Report Analyst<br><br></a>
+            &copy; <span id="displayYear"></span> Designed By
+            <a href="https://themewagon.com/">Open Clusters Systems</a>
         </p>
       </div>
     </div>

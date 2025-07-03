@@ -21,7 +21,7 @@
                     <a class="navbar-brand" href="{{ route('index') }}">
                         <button type="button" class="btn">
                             <img src="{{ asset('asset/images/orthoc.jpg') }}" alt="Orthoc"
-                                style="height: 100px; width: 100px; vertical-align: middle; margin-right: 8px;">
+                                style="height: 100px; width: 182px; vertical-align: middle; margin-right: 8px;">
                         </button>
                     </a>
 
@@ -49,6 +49,12 @@
 
                             @if (Auth::check())
                                 <li class="nav-item">
+                                    <a class="nav-link"
+                                        href="{{ Auth::user()->isAdmin() ? route('admin.dashboard') : route('patient.dashboard') }}">
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('logout') }}"
                                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         Logout
@@ -58,12 +64,7 @@
                                         @csrf
                                     </form>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link"
-                                        href="{{ Auth::user()->isAdmin() ? route('admin.dashboard') : route('patient.dashboard') }}">
-                                        Dashboard
-                                    </a>
-                                </li>
+
                             @else
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">Login</a>

@@ -54,6 +54,26 @@
   <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{ asset('asset/css/responsive.css') }}" rel="stylesheet" />
+<style>
+  body {
+            background-color: #C8E6C9;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+    .container {
+        background-color: #52B4A4; /* White background for the main content area */
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+        padding: 30px; /* More padding inside the container */
+    }
+    h1 {
+        color: black; /* Bootstrap success green */
+        font-weight: 700; /* Bolder heading */
+        letter-spacing: 1px;
+    }
+</style>
 
 </head>
 
