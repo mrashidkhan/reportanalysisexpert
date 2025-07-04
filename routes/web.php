@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\MedicalReportController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserRegistrationController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -130,3 +131,5 @@ Route::middleware(['auth'])->group(function () {
 Route::put('/medical-reports/{report}/update-analysis', [MedicalReportController::class, 'updateAnalysis'])
         ->name('medical-reports.update-analysis')
         ->middleware('auth');
+
+Route::post('/contact/submit', [ContactController::class, 'store'])->name('contact.submit');
