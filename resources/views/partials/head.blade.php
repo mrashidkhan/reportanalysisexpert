@@ -63,7 +63,7 @@
         }
 
     .container {
-        background-color: #52B4A4; /* White background for the main content area */
+        background-color: #60C5B7; /* White background for the main content area */
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
         padding: 30px; /* More padding inside the container */
