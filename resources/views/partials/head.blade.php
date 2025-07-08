@@ -15,7 +15,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   {{-- <link rel="shortcut icon" href="images/favicon.png" type=""> --}}
-  <link rel="shortcut icon" href="{{ asset('asset/images/favicon.png') }}" type="image/png">
+  <link rel="shortcut icon" href="{{ asset('asset/images/favicon_io/favicon.ico') }}" type="image/png">
 
   <title> Report Analysis Expert </title>
 
@@ -73,7 +73,21 @@
         font-weight: 700; /* Bolder heading */
         letter-spacing: 1px;
     }
+
 </style>
+
+<!-- Font Awesome for WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS (optional) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .whatsapp-btn {
+            transition: all 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
 
 </head>
 
