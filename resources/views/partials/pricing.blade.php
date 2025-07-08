@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <small class="d-block text-center mt-3 text-muted">
+    <small class="d-block text-center mt-3 ">
         *Urgent and Emergency priorities have additional charges
     </small>
 </section>

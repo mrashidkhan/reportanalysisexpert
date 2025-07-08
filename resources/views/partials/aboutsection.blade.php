@@ -1,10 +1,10 @@
 <!-- about section -->
 
-{{-- @if (isset($current_view_name) && $current_view_name === 'aboutus')
+ @if (isset($current_view_name) && $current_view_name === 'aboutus')
     <section class="about_section layout_padding">
     @else
         <section class="about_section layout_margin-bottom">
-@endif --}}
+@endif
 <div class="container  ">
     <div class="row">
         <div class="col-md-6 ">
@@ -47,6 +47,6 @@
         </div>
     </div>
 </div>
-{{-- </section> --}}
+</section>
 
 <!-- end about section -->

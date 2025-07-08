@@ -40,9 +40,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('aboutus') }}">About Us</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('reports.upload') }}">Reports Upload</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('contactus') }}">Contact Us</a>
                             </li>
