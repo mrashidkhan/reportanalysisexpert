@@ -22,7 +22,7 @@
   <!-- Open Graph metadata -->
         <meta property="og:title" content="Report Analysis Expert" />
         <meta property="og:description" content="Experience the vibrant culture of India and Pakistan with Report Analysis Expert! We organize and promote exciting event shows that bring people together. Follow us for updates on upcoming events and behind-the-scenes peeks into the world of Indian and Pakistani entertainment." />
-        <meta property="og:image" content="https://molabsmediatemp.com/assets/images/diamond-logo.png" />
+        <meta property="og:image" content="{{ asset('asset/images/labanalystlogoog.jpg') }}" />
         <meta property="og:url" content="https://reportanalysisexpert.com" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Report Analysis Expert" />
@@ -33,7 +33,7 @@
         <meta name="twitter:creator" content="@yourtwitterhandle" />
         <meta name="twitter:title" content="Report Analysis Expert" />
         <meta name="twitter:description" content="Experience the vibrant culture of India and Pakistan with Report Analysis Expert! We organize and promote exciting event shows that bring people together. Follow us for updates on upcoming events and behind-the-scenes peeks into the world of Indian and Pakistani entertainment." />
-        <meta name="twitter:image" content="https://molabsmediatemp.com/assets/images/diamond-logo.png" />
+        <meta name="twitter:image" content="{{ asset('asset/images/labanalystlogoog.jpg') }}" />
 
   <!-- bootstrap core css -->
   {{-- <link rel="stylesheet" type="text/css" href="css/bootstrap.css" /> --}}
